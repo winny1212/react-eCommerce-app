@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "MERN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winny1212/react-eCommerce-app.git"
+  },
+  "author": "Winny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winny1212/react-eCommerce-app/issues"
+  },
+  "homepage": "https://github.com/winny1212/react-eCommerce-app#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
