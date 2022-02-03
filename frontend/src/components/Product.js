@@ -1,4 +1,4 @@
-import { Rating } from '@mui/material';
+import Rating from './Rating';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
@@ -19,6 +19,7 @@ const Product = ({ product }) => {
           <Rating
             value={product.rating}
             text={`${product.numReviews} comments`}
+            color='#f8e825'
           />
         </Card.Text>
         <Card.Text as='h3'>${product.price}</Card.Text>
