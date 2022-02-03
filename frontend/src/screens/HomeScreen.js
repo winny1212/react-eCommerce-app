@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, ListGroup } from 'react-bootstrap';
 import { products } from '../data';
 import Product from '../components/Product';
 
@@ -10,7 +10,7 @@ const HomeScreen = () => {
       <Row>
         {products.map((product) => (
           <Col xs={12} sm={6} md={6} lg={4} xl={3}>
-            <Product product={product} />
+            <Product key={product.id} product={product} />
           </Col>
         ))}
       </Row>
