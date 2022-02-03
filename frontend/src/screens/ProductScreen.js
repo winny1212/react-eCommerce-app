@@ -50,6 +50,39 @@ const ProductScreen = () => {
             <ListGroup.Item>Details：{product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
+
+        {/* display stock info and add to cart button */}
+        <Col md={3}>
+          <Card>
+            <ListGroup variant='flush'>
+              <ListGroup.Item>
+                <Row>
+                  <Col>价格：</Col>
+                  <Col>
+                    <strong>¥{product.price}</strong>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Row>
+                  <Col>In Stock：</Col>
+                  <Col>
+                    <strong>{product.countInStock}</strong>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <Button
+                  className='btn-block'
+                  type='button'
+                  disabled={product.countInStock === 0}
+                >
+                  Add to cart
+                </Button>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        </Col>
       </Row>
     </div>
   );
