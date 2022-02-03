@@ -1,4 +1,5 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { BiLogInCircle } from 'react-icons/bi';
@@ -7,18 +8,24 @@ const Header = () => {
     <header>
       <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
         <Container>
-          <Navbar.Brand href='/'>Home Decor</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand>Home Decor</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              <Nav.Link href='/cart'>
-                <FaShoppingCart />
-                Cart
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                <BiLogInCircle />
-                Login
-              </Nav.Link>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                  <FaShoppingCart />
+                  Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <BiLogInCircle />
+                  Login
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
