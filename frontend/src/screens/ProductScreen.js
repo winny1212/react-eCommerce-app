@@ -10,14 +10,12 @@ import {
   ListGroupItem,
   Form,
 } from 'react-bootstrap';
-import { products } from '../data';
 import axios from 'axios';
 import Rating from '../components/Rating';
 
-const ProductScreen = (match) => {
+//set the state
+const ProductScreen = ({ match }) => {
   const [product, setProduct] = useState([]);
-  //get the product id
-  const params = useParams();
 
   //get the single product
   useEffect(() => {
@@ -37,12 +35,12 @@ const ProductScreen = (match) => {
       {/*display the single product details  */}
       <Row>
         {/* display image */}
-        <Col md={4}>
+        <Col md={5}>
           <Image src={product.image} alt={product.name} class='float-right' />
         </Col>
 
         {/* display image details */}
-        <Col md={5}>
+        <Col md={4}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h3>{product.name}</h3>
@@ -64,9 +62,9 @@ const ProductScreen = (match) => {
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <Row>
-                  <Col>价格：</Col>
+                  <Col>Price：</Col>
                   <Col>
-                    <strong>¥{product.price}</strong>
+                    <strong>${product.price}</strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
