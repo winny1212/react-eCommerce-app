@@ -35,7 +35,7 @@
 //   },
 // ];
 
-const products = [
+export const products = [
   {
     _id: '1',
     name: 'Creative Wall Photo Frame',
@@ -169,5 +169,3 @@ const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
 ];
-
-module.exports = products;
