@@ -1,43 +1,43 @@
-export const sliderData = [
-  {
-    id: 1,
-    img: './assets/slider1.jpg',
-  },
-  {
-    id: 2,
-    img: './assets/slider2.jpg',
-  },
-  {
-    id: 3,
-    img: './assets/slider3.jpg',
-  },
-  {
-    id: 4,
-    img: './assets/slider4.jpg',
-  },
-];
+// export const sliderData = [
+//   {
+//     id: 1,
+//     img: './assets/slider1.jpg',
+//   },
+//   {
+//     id: 2,
+//     img: './assets/slider2.jpg',
+//   },
+//   {
+//     id: 3,
+//     img: './assets/slider3.jpg',
+//   },
+//   {
+//     id: 4,
+//     img: './assets/slider4.jpg',
+//   },
+// ];
 
-export const categories = [
-  {
-    id: 1,
-    img: './assets/cat1.jpg',
-    title: 'HOME ACCESSORIES',
-  },
-  {
-    id: 2,
-    img: './assets/cat2.jpg',
-    title: 'FLOWER SERIES',
-  },
-  {
-    id: 3,
-    img: './assets/cat3.jpg',
-    title: 'SIMPLE DECORATION',
-  },
-];
+// export const categories = [
+//   {
+//     id: 1,
+//     img: './assets/cat1.jpg',
+//     title: 'HOME ACCESSORIES',
+//   },
+//   {
+//     id: 2,
+//     img: './assets/cat2.jpg',
+//     title: 'FLOWER SERIES',
+//   },
+//   {
+//     id: 3,
+//     img: './assets/cat3.jpg',
+//     title: 'SIMPLE DECORATION',
+//   },
+// ];
 
 const products = [
   {
-    _id: 1,
+    _id: '1',
     name: 'Creative Wall Photo Frame',
     category: 'HOME ACCESSORIES',
     price: 55.99,
@@ -48,7 +48,7 @@ const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    _id: 2,
+    _id: '2',
     name: 'Dried Flower Bouquet',
     category: 'lSIMPLE DECORATION',
     price: 28.99,
@@ -59,7 +59,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 3,
+    _id: '3',
     name: 'Green Dried Flower Bouquet',
     category: 'sSIMPLE DECORATION',
     price: 30.59,
@@ -70,7 +70,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 4,
+    _id: '4',
     name: 'Creative Animal Wall Picture',
     category: 'HOME ACCESSORIES',
     price: 80.99,
@@ -81,7 +81,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 5,
+    _id: '5',
     name: 'Hantera Decorative Vase',
     category: 'SIMPLE DECORATION',
     price: 22.99,
@@ -92,7 +92,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 6,
+    _id: '6',
     name: 'Nature Wall Picture',
     category: 'SIMPLE DECORATION',
     price: 38.99,
@@ -103,7 +103,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 7,
+    _id: '7',
     name: 'Artificial Plum Blossom',
     category: 'FLOWER SERIES',
     price: 58.99,
@@ -114,7 +114,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 8,
+    _id: '8',
     name: 'LOVE Decor with Elk Model',
     category: 'HOME ACCESSORIES',
     price: 32.99,
@@ -125,7 +125,7 @@ const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    _id: 9,
+    _id: '9',
     name: 'Modern Pink Ceramic Vase',
     category: 'shakes',
     price: 26.99,
@@ -136,7 +136,7 @@ const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    _id: 10,
+    _id: '10',
     name: 'Wooden Home Sign Decor',
     category: 'HOME ACCESSORIES',
     price: 36.99,
@@ -147,7 +147,7 @@ const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    _id: 11,
+    _id: '11',
     name: 'Ballet and Ballerina 3D model',
     category: 'shakes',
     price: 46.99,
@@ -158,7 +158,7 @@ const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    _id: 12,
+    _id: '12',
     name: 'White Dream Wind Chimes',
     category: 'SIMPLE DECORATION',
     price: 35.99,
