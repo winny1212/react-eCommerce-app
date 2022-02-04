@@ -36,7 +36,7 @@ const ProductScreen = ({ match }) => {
       <Row>
         {/* display image */}
         <Col md={5}>
-          <Image src={product.image} alt={product.name} class='float-right' />
+          <Image src={product.image} alt={product.name} fluid />
         </Col>
 
         {/* display image details */}
@@ -51,7 +51,7 @@ const ProductScreen = ({ match }) => {
                 text={`${product.numReviews} comments`}
               />
             </ListGroup.Item>
-            <ListGroup.Item>Price：${product.price}</ListGroup.Item>
+            <ListGroup.Item>Price:${product.price}</ListGroup.Item>
             <ListGroup.Item>Details：{product.description}</ListGroup.Item>
           </ListGroup>
         </Col>
