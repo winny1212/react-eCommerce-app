@@ -4,7 +4,7 @@ import { Row, Col, ListGroup } from 'react-bootstrap';
 // import { products } from '../data';
 // import axios from 'axios';
 import Product from '../components/Product';
-import { listProducts } from '../actions';
+import { listProducts } from '../actions/productActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
