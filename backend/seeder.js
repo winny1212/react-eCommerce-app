@@ -35,6 +35,7 @@ const importData = async () => {
 
     // exit the process after inserting
     process.exit();
+    process.exit(1);
   } catch (error) {
     console.error(`${error}`.red.inverse);
   }
@@ -53,5 +54,13 @@ const destroyData = async () => {
     process.exit();
   } catch (error) {
     console.error(`${error}`.red.inverse);
+    process.exit(1);
   }
 };
+
+//set the conditional function for process.argv command
+if (process.argv[2] === '-d') {
+  destroyData();
+} else {
+  importData();
+}
