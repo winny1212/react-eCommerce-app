@@ -22,8 +22,10 @@ const HomeScreen = () => {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
 
+  //   destructure the state of productList
   const { loading, error, products } = productList;
 
+  //get the products page
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
@@ -31,6 +33,7 @@ const HomeScreen = () => {
   return (
     <>
       <h1>The Newest Arrive</h1>
+      {/* when get request , the page will show loading before get the products; but if there are error, it will show the error message */}
       {loading ? (
         <h1>Loading...</h1>
       ) : error ? (
