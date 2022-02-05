@@ -3,14 +3,17 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const reducer = combineReducers({});
-const store = createStore(reducer, initialState);
 
+//initial state
 const initialState = {};
 
 const middleware = [thunk];
 
+//create store
 const store = createStore(
   reducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 );
+
+export default store;
