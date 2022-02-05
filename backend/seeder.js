@@ -39,3 +39,19 @@ const importData = async () => {
     console.error(`${error}`.red.inverse);
   }
 };
+
+const destroyData = async () => {
+  try {
+    //clear database before inserting
+    await Order.deleteMany();
+    await User.deleteMany();
+    await Product.deleteMany();
+
+    console.log('data detroy succeffully！'.green.inverse);
+
+    // exit the process after inserting
+    process.exit();
+  } catch (error) {
+    console.error(`${error}`.red.inverse);
+  }
+};
