@@ -5,6 +5,8 @@ import { Row, Col, ListGroup } from 'react-bootstrap';
 // import axios from 'axios';
 import Product from '../components/Product';
 import { listProducts } from '../actions';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 //set the products state
 const HomeScreen = () => {
@@ -35,9 +37,9 @@ const HomeScreen = () => {
       <h1>The Newest Arrive</h1>
       {/* when get request , the page will show loading before get the products; but if there are error, it will show the error message */}
       {loading ? (
-        <h1>Loading...</h1>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {/* map the products */}
