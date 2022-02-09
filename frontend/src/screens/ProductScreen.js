@@ -16,7 +16,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 
 //set the state
-const ProductScreen = ({ match }) => {
+const ProductScreen = ({ match, history }) => {
   //   const [product, setProduct] = useState([]);
 
   //   //get the single product
@@ -36,10 +36,15 @@ const ProductScreen = ({ match }) => {
   //destructure
   const { loading, error, product } = productDetails;
 
+  //get product details
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
 
+  //function for adding product to cart
+  const handleAddToCart = () => {
+    history.pushState(`/cart/${match.params.id}?qty=${quantity}`);
+  };
   return (
     <div>
       {/* go back to the homepage */}
@@ -96,7 +101,7 @@ const ProductScreen = ({ match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>数量</Col>
+                    <Col>Quantity</Col>
                     <Col>
                       <Form.Select
                         as='select'
@@ -117,6 +122,7 @@ const ProductScreen = ({ match }) => {
                     className='btn-block'
                     type='button'
                     disabled={product.countInStock === 0}
+                    onClick={handleAddToCart}
                   >
                     Add to cart
                   </Button>
