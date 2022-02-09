@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   Row,
   Col,
@@ -8,11 +8,12 @@ import {
   ListGroup,
   Card,
   Button,
-  ListGroupItem,
   Form,
 } from 'react-bootstrap';
 import { listProductDetails } from '../actions/productActions';
 import Rating from '../components/Rating';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 
 //set the state
 const ProductScreen = ({ match }) => {
@@ -27,6 +28,8 @@ const ProductScreen = ({ match }) => {
   //     fetchProduct();
   //   }, [match]);
 
+  //set the quantity added to cart
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   //access to the state of single product details
   const productDetails = useSelector((state) => state.productDetails);
@@ -37,7 +40,6 @@ const ProductScreen = ({ match }) => {
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match]);
 
-  const product = {};
   return (
     <div>
       {/* go back to the homepage */}
@@ -89,6 +91,24 @@ const ProductScreen = ({ match }) => {
                     <Col>In Stock：</Col>
                     <Col>
                       <strong>{product.countInStock}</strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>数量</Col>
+                    <Col>
+                      <Form.Select
+                        as='select'
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                      >
+                        {[...Array(product.countInStock).keys()].map((i) => (
+                          <option key={i + 1} value={i + 1}>
+                            {i + 1}
+                          </option>
+                        ))}
+                      </Form.Select>
                     </Col>
                   </Row>
                 </ListGroup.Item>
