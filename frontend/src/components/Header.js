@@ -4,10 +4,16 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { BiLogInCircle } from 'react-icons/bi';
+import { logout } from '../actions/userActions';
 const Header = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  // function for logout
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <header>
       <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
@@ -24,12 +30,25 @@ const Header = () => {
                   Cart
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/login'>
-                <Nav.Link>
-                  <BiLogInCircle />
-                  Login
-                </Nav.Link>
-              </LinkContainer>
+              {/* dwaq */}
+              {userInfo ? (
+                <NavDropdown title={userInfo.name} id='username'>
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to='/login'>
+                  <Nav.Link>
+                    <BiLogInCircle />
+                    Login
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+              {/* wer */}
             </Nav>
           </Navbar.Collapse>
         </Container>
