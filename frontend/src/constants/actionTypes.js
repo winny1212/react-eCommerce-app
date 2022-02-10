@@ -11,3 +11,9 @@ export const PRODUCT_DETAILS_FAIL = 'PRODUCT_LIST_FAIL';
 //cart
 export const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
 export const REMOVE_ITEM_FROM_CART = 'REMOVE_ITEM_FROM_CART';
+
+//user constants
+export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
+export const USER_LOGIN_FAIL = 'USER_LOGIN_FAIL';
+export const USER_LOGOUT = 'USER_LOGOUT';

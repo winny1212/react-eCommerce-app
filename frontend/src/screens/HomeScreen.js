@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, ListGroup } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 // import { products } from '../data';
 // import axios from 'axios';
 import Product from '../components/Product';
@@ -44,8 +44,8 @@ const HomeScreen = () => {
         <Row>
           {/* map the products */}
           {products.map((product) => (
-            <Col xs={12} sm={6} md={6} lg={4} xl={3}>
-              <Product key={product.id} product={product} />
+            <Col key={product._id} xs={12} sm={6} md={6} lg={4} xl={3}>
+              <Product product={product} />
             </Col>
           ))}
         </Row>
