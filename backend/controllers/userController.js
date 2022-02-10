@@ -2,7 +2,7 @@ import asyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
 
-//@desc    nre user registration
+//@desc    new user registration
 //@route   POST/api/users
 //@access  public
 const registerUser = asyncHandler(async (req, res) => {
@@ -71,4 +71,32 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser, getUserProfile, registerUser };
+//@desc    profile update
+//@route   PUT/api/users/profile
+//@access  private
+const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  //get the updated infomation
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+    const updateUser = await user.save();
+    //return the new infomation
+    res.json({
+      _id: updateUser._id,
+      name: updateUser.name,
+      email: updateUser.email,
+      isAdmin: updateUser.isAdmin,
+      token: generateToken(updateUser._id),
+    });
+  } else {
+    res.status(404);
+    throw new Error('user is not exist');
+  }
+});
+
+export { authUser, getUserProfile, registerUser, updateUserProfile };
