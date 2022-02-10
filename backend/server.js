@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 //products route
 app.use('/api/products', productRoutes);
-app.use('/api/user', userRoutes);
+app.use('/api/users', userRoutes);
 
 //middleware for error handling
 app.use(notFound);
