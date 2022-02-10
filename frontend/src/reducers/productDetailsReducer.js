@@ -4,7 +4,7 @@ import {
   PRODUCT_DETAILS_FAIL,
 } from '../constants/actionTypes';
 
-//request for single product
+//reducer for request for single product
 export const productDeatilsReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     // request
