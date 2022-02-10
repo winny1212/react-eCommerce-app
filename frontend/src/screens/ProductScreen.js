@@ -29,7 +29,7 @@ const ProductScreen = ({ match, history }) => {
   //   }, [match]);
 
   //set the quantity added to cart
-  const [quantity, setQuantity] = useState(1);
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   //access to the state of single product details
   const productDetails = useSelector((state) => state.productDetails);
@@ -43,7 +43,7 @@ const ProductScreen = ({ match, history }) => {
 
   //function for adding product to cart
   const handleAddToCart = () => {
-    history.pushState(`/cart/${match.params.id}?qty=${quantity}`);
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
   return (
     <div>
@@ -105,8 +105,8 @@ const ProductScreen = ({ match, history }) => {
                     <Col>
                       <Form.Select
                         as='select'
-                        value={quantity}
-                        onChange={(e) => setQuantity(e.target.value)}
+                        value={qty}
+                        onChange={(e) => setQty(e.target.value)}
                       >
                         {[...Array(product.countInStock).keys()].map((i) => (
                           <option key={i + 1} value={i + 1}>
@@ -119,10 +119,10 @@ const ProductScreen = ({ match, history }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Button
+                    onClick={handleAddToCart}
                     className='btn-block'
                     type='button'
                     disabled={product.countInStock === 0}
-                    onClick={handleAddToCart}
                   >
                     Add to cart
                   </Button>

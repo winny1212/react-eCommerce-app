@@ -21,3 +21,12 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
   //store the cart items in local
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };
+
+//remove items from cart
+export const removeFromCart = (id) => async (dispatch, getState) => {
+  dispatch({
+    type: REMOVE_ITEM_FROM_CART,
+    payload: id,
+  });
+  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
