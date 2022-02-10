@@ -26,7 +26,7 @@ const registerUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400);
-    throw new Error('无效的用户信息');
+    throw new Error('Invalid user!');
   }
 });
 

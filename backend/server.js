@@ -11,13 +11,13 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(express.json());
 // custome routes
 app.get('/', (req, res) => {
   res.send('the server is running');
 });
 
-//products route
+//custom routes
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 
