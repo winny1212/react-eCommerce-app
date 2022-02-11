@@ -37,7 +37,6 @@
 
 export const products = [
   {
-    
     name: 'Creative Wall Photo Frame',
     category: 'HOME ACCESSORIES',
     price: 55.99,
@@ -48,7 +47,6 @@ export const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-  
     name: 'Dried Flower Bouquet',
     category: 'lSIMPLE DECORATION',
     price: 28.99,
@@ -59,7 +57,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-   
     name: 'Green Dried Flower Bouquet',
     category: 'sSIMPLE DECORATION',
     price: 30.59,
@@ -70,7 +67,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'Creative Animal Wall Picture',
     category: 'HOME ACCESSORIES',
     price: 80.99,
@@ -81,7 +77,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'Hantera Decorative Vase',
     category: 'SIMPLE DECORATION',
     price: 22.99,
@@ -92,7 +87,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'Nature Wall Picture',
     category: 'SIMPLE DECORATION',
     price: 38.99,
@@ -103,7 +97,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'Artificial Plum Blossom',
     category: 'FLOWER SERIES',
     price: 58.99,
@@ -114,7 +107,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'LOVE Decor with Elk Model',
     category: 'HOME ACCESSORIES',
     price: 32.99,
@@ -125,7 +117,6 @@ export const products = [
     description: `Bring some boho glam into your life or someone close to your heart.  Our original boho babe bouquet has been updated. Geometric element in the form of small green palm, beauty in the ruscus nestled amongst some native foliage.`,
   },
   {
-    
     name: 'Modern Pink Ceramic Vase',
     category: 'shakes',
     price: 26.99,
@@ -136,7 +127,6 @@ export const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-   
     name: 'Wooden Home Sign Decor',
     category: 'HOME ACCESSORIES',
     price: 36.99,
@@ -147,7 +137,6 @@ export const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    
     name: 'Ballet and Ballerina 3D model',
     category: 'shakes',
     price: 46.99,
@@ -158,7 +147,6 @@ export const products = [
     description: `Bring the coastal vibes into your home with our Hantera Decorative Vase. Featuring a unique jug design and made from ceramic in clean ocean tones, available in a range of sizes. Style on its own for a simplistic look or add a touch of greenery or dried grass stems to complete the look.`,
   },
   {
-    
     name: 'White Dream Wind Chimes',
     category: 'SIMPLE DECORATION',
     price: 35.99,

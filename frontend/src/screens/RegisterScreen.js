@@ -42,25 +42,25 @@ const RegisterScreen = ({ location, history }) => {
           {error && <Message variant='danger'>{error}</Message>}
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group className='mb-3' controlId='formBasicUsername'>
               <Form.Label>Username：</Form.Label>
               <Form.Control
                 type='name'
-                placeholder='Username'
+                placeholder='Enter username'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Form.Group controlId='email'>
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email：</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Email'
+                placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Form.Group controlId='password'>
+            <Form.Group className='mb-3' controlId='formBasicPassword'>
               <Form.Label>Password：</Form.Label>
               <Form.Control
                 type='password'
@@ -69,7 +69,7 @@ const RegisterScreen = ({ location, history }) => {
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Form.Group controlId='confirmPassword'>
+            <Form.Group className='mb-3' controlId='confirmPassword'>
               <Form.Label>Password Confirmation：</Form.Label>
               <Form.Control
                 type='password'
@@ -78,8 +78,8 @@ const RegisterScreen = ({ location, history }) => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Button type='submit' variant='primary'>
-              Register
+            <Button variant='primary' type='submit'>
+              Submit
             </Button>
           </Form>
           <Row className='py-3'>

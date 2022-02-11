@@ -34,30 +34,32 @@ const LoginScreen = ({ location, history }) => {
     <Container>
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
-          <h1>Login</h1>
+          <h1 style={{ color: 'rgb(119, 119, 119)', fontSize: '2em' }}>
+            Login
+          </h1>
           {error && <Message variant='danger'>{error}</Message>}
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='email'>
+            <Form.Group className='mb-3' controlId='formBasicEmail'>
               <Form.Label>Email：</Form.Label>
               <Form.Control
                 type='email'
-                placeholder='Email...'
+                placeholder='Enter email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Form.Group controlId='password'>
+            <Form.Group className='mb-3' controlId='password'>
               <Form.Label>Password：</Form.Label>
               <Form.Control
                 type='password'
-                placeholder='Password...'
+                placeholder='Password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               ></Form.Control>
             </Form.Group>
-            <Button type='submit' variant='primary'>
-              Login
+            <Button variant='primary' type='submit'>
+              Submit
             </Button>
           </Form>
           <Row className='py-3'>

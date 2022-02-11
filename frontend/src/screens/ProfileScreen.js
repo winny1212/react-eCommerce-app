@@ -47,14 +47,14 @@ const ProfileScreen = ({ location, history }) => {
   };
   return (
     <Row>
-      <Col md={3}>
+      <Col md={4}>
         <h2>Personal details</h2>
         {success && <Message variant='success'>Update sucessfully！</Message>}
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
-          <Form.Group controlId='name'>
+          <Form.Group className='mb-3' controlId='name'>
             <Form.Label>Username：</Form.Label>
             <Form.Control
               type='name'
@@ -63,7 +63,7 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='email'>
+          <Form.Group className='mb-3' controlId='email'>
             <Form.Label>Email：</Form.Label>
             <Form.Control
               type='email'
@@ -72,7 +72,7 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setEmail(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='password'>
+          <Form.Group className='mb-3' controlId='password'>
             <Form.Label>Password：</Form.Label>
             <Form.Control
               type='password'
@@ -81,7 +81,7 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Form.Group controlId='confirmPassword'>
+          <Form.Group className='mb-3' controlId='confirmPassword'>
             <Form.Label>Password confirmation：</Form.Label>
             <Form.Control
               type='password'
@@ -90,12 +90,12 @@ const ProfileScreen = ({ location, history }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></Form.Control>
           </Form.Group>
-          <Button type='submit' variant='primary'>
+          <Button variant='primary' type='submit'>
             Edit
           </Button>
         </Form>
       </Col>
-      <Col md={9}>
+      <Col md={4}>
         <h2>My order:</h2>
       </Col>
     </Row>

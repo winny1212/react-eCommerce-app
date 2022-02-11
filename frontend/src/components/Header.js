@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
-import { BiLogInCircle } from 'react-icons/bi';
+import { FaUserAlt } from 'react-icons/fa';
 import { logout } from '../actions/userActions';
 const Header = () => {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ const Header = () => {
               ) : (
                 <LinkContainer to='/login'>
                   <Nav.Link>
-                    <BiLogInCircle />
+                    <FaUserAlt />
                     Login
                   </Nav.Link>
                 </LinkContainer>

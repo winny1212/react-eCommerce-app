@@ -18,6 +18,7 @@ const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
   //   get the quantity of item
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
+  console.log(qty);
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -43,7 +44,9 @@ const CartScreen = ({ match, location, history }) => {
   return (
     <Row>
       <Col md={8}>
-        <h1>Shoping Cart</h1>
+        <h1 style={{ color: 'rgb(119, 119, 119)', fontSize: '2em' }}>
+          Shopping Cart
+        </h1>
         {/* if there is no items in the cart, show the message "you cart is empty" */}
         {cartItems.length === 0 ? (
           <Message>
@@ -59,13 +62,18 @@ const CartScreen = ({ match, location, history }) => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/products/${item.product}`}>{item.name}</Link>
+                    <Link
+                      style={{ textDecoration: 'none', color: '#ec5285' }}
+                      to={`/products/${item.product}`}
+                    >
+                      {item.name}
+                    </Link>
                   </Col>
                   <Col md={2}> ${item.price}</Col>
-                  <Col md={2}>
+                  <Col md={3}>
                     <Form.Select
                       as='select'
-                      value={qty}
+                      value={item.qty}
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
@@ -94,10 +102,10 @@ const CartScreen = ({ match, location, history }) => {
         )}
       </Col>
       <Col md={4}>
-        <Card>
+        <Card className='mt-3'>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h4>
+              <h4 style={{ color: 'rgb(119, 119, 119)' }}>
                 Total ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 Items
               </h4>
