@@ -5,7 +5,10 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
 } from '../constants/actionTypes';
 
-export const cartReducer = (state = { cartItems: [] }, action) => {
+export const cartReducer = (
+  state = { cartItems: [], shippingAddress: {} },
+  action
+) => {
   switch (action.type) {
     // function for action of ADD_ITEM_TO_CART
     case ADD_ITEM_TO_CART:
