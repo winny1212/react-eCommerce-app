@@ -3,7 +3,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { getUserDetails } from '../actions/userActions';
+import { getUserDetails, updateUserDetails } from '../actions/userActions';
 
 const ProfileScreen = ({ location, history }) => {
   // initial profile page state
@@ -20,6 +20,9 @@ const ProfileScreen = ({ location, history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { success } = userUpdateProfile;
 
   //check if the user is login or not, if not go to the login page, if already login then we filled the user form with the user information
   useEffect(() => {
@@ -38,11 +41,13 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     //dispatch update profile function
+    dispatch(updateUserDetails({ id: user._id, name, email, password }));
   };
   return (
     <Row>
       <Col md={3}>
         <h2>Personal details</h2>
+        {success && <Message variant='success'>Update sucessfully！</Message>}
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
         {loading && <Loader />}
