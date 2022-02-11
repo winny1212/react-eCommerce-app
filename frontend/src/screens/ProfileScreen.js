@@ -97,6 +97,11 @@ const ProfileScreen = ({ location, history }) => {
       </Col>
       <Col md={4}>
         <h2>My order:</h2>
+
+        <h6 style={{ color: '#ec5285' }}>
+          This part shows user's order details including delivery state, it will
+          be coming soon!
+        </h6>
       </Col>
     </Row>
   );

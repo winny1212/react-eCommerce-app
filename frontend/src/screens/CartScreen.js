@@ -69,8 +69,11 @@ const CartScreen = ({ match, location, history }) => {
                       {item.name}
                     </Link>
                   </Col>
-                  <Col md={2}> ${item.price}</Col>
-                  <Col md={3}>
+                  <Col md={2} className='mt-1'>
+                    {' '}
+                    ${item.price}
+                  </Col>
+                  <Col md={3} className='mt-1'>
                     <Form.Select
                       as='select'
                       value={item.qty}
@@ -89,6 +92,7 @@ const CartScreen = ({ match, location, history }) => {
                   </Col>
                   <Col>
                     <Button
+                      className='mt-1'
                       type='button'
                       onClick={() => removeFromCartHandler(item.product)}
                     >

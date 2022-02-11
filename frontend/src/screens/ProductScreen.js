@@ -58,8 +58,13 @@ const ProductScreen = ({ match, history }) => {
       ) : (
         <Row>
           {/* display image */}
-          <Col md={5}>
-            <Image src={product.image} alt={product.name} fluid />
+          <Col md={4}>
+            <Image
+              className='ms-auto'
+              src={product.image}
+              alt={product.name}
+              fluid
+            />
           </Col>
 
           {/* display image details */}
