@@ -21,7 +21,7 @@ const orderSchema = mongoose.Schema(
       },
     ],
     shippingAddress: {
-      StreetDddress: { type: String, required: true },
+      StreetAddress: { type: String, required: true },
       Suburb: { type: String, required: true },
       State: { type: String, required: true },
       postCode: { type: String, required: true },
@@ -34,7 +34,7 @@ const orderSchema = mongoose.Schema(
       id: { type: String },
       status: { type: String },
       updata_time: { type: String },
-      wechat_address: { type: String },
+      Paypal_address: { type: String },
     },
     isDelivered: { type: Boolean, required: true, default: false },
     deliveredAt: { type: Date },

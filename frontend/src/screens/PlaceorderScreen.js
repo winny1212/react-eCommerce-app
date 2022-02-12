@@ -9,7 +9,7 @@ import {
   Image,
   Card,
 } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Message from '../components/Message';
 import CheckoutSteps from '../components/CheckoutSteps';
 
@@ -46,7 +46,8 @@ const PlaceorderScreen = () => {
               <h2>Shipping Address</h2>
               <p>
                 <strong>Address：</strong>
-                {cart.shippingAddress.address},{cart.shippingAddress.state},
+                {cart.shippingAddress.streetAddress},
+                {cart.shippingAddress.suburb},{cart.shippingAddress.state},
                 {cart.shippingAddress.postCode}
               </p>
             </ListGroup.Item>

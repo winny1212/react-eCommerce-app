@@ -10,13 +10,16 @@ const ShippingScreen = ({ history }) => {
   const { shippingAddress } = cart;
 
   // initial state
-  const [address, setAddress] = useState(shippingAddress.address);
+  const [streetAddress, setStreetAddress] = useState(
+    shippingAddress.streetAddress
+  );
+  const [suburb, setSuburb] = useState(shippingAddress.Suburb);
   const [state, setState] = useState(shippingAddress.state);
   const [postCode, setPostCode] = useState(shippingAddress.postCode);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, state, postCode }));
+    dispatch(saveShippingAddress({ streetAddress, suburb, state, postCode }));
     history.push('/payment');
   };
   return (
@@ -27,13 +30,23 @@ const ShippingScreen = ({ history }) => {
           <h1>Delivery address</h1>
           <Form onSubmit={submitHandler}>
             <Form.Group className='mb-3' controlId='address'>
-              <Form.Label>Address：</Form.Label>
+              <Form.Label>Street：</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter address'
-                value={address}
+                placeholder='Enter street'
+                value={streetAddress}
                 required
-                onChange={(e) => setAddress(e.target.value)}
+                onChange={(e) => setStreetAddress(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='address'>
+              <Form.Label>Suburb：</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter suburb'
+                value={suburb}
+                required
+                onChange={(e) => setSuburb(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group className='mb-3' controlId='state'>
