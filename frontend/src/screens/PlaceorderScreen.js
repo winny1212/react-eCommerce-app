@@ -16,6 +16,21 @@ import CheckoutSteps from '../components/CheckoutSteps';
 const PlaceorderScreen = () => {
   const cart = useSelector((state) => state.cart);
 
+  //function for keep two decimal points
+  const addDecimals = (num) => {
+    return (Math.round(num * 100) / 100).toFixed(2);
+  };
+  //calculate items price
+  cart.itemsPrice = addDecimals(
+    cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+  );
+
+  //calculate shipping price
+  cart.shippingPrice = addDecimals(cart.itemsPrice > 5000 ? 0 : 20);
+  //calculate total price
+  cart.totalPrice = addDecimals(
+    Number(cart.itemsPrice) + Number(cart.shippingPrice)
+  );
   //submit order function
   const placeorderHandler = () => {
     console.log('submit');
