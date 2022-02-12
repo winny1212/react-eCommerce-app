@@ -9,11 +9,13 @@ import {
   Image,
   Card,
 } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
+import { createOrder } from '../actions/orderActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
-const PlaceorderScreen = () => {
+const PlaceorderScreen = ({ history }) => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   //function for keep two decimal points
@@ -31,9 +33,29 @@ const PlaceorderScreen = () => {
   cart.totalPrice = addDecimals(
     Number(cart.itemsPrice) + Number(cart.shippingPrice)
   );
+
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
+
   //submit order function
   const placeorderHandler = () => {
-    console.log('submit');
+    // console.log('submit');
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        totalPrice: cart.totalPrice,
+      })
+    );
   };
   return (
     <>
@@ -116,6 +138,9 @@ const PlaceorderScreen = () => {
                   <Col>Total</Col>
                   <Col>${cart.totalPrice}</Col>
                 </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button
