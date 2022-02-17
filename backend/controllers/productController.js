@@ -36,4 +36,23 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export { getProducts, getProductById, deleteProduct };
+//@desc    create product
+//@route   POST/api/products
+//@access  private(admin）
+const createProduct = asyncHandler(async (req, res) => {
+  //create a template for creating a new product
+  const product = new Product({
+    name: 'Name',
+    price: 0,
+    user: req.user._id,
+    image: '/images/sample.jpg',
+    category: 'Category',
+    countInStock: 0,
+    numReviews: 0,
+    description: 'Description',
+    rating: 0,
+  });
+  const createdProduct = await product.save();
+  res.status(201).json(createdProduct);
+});
+export { getProducts, getProductById, deleteProduct, createProduct };

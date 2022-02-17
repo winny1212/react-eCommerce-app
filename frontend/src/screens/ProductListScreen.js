@@ -6,7 +6,7 @@ import { MdDelete } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProducts } from '../actions/productActions';
+import { listProducts, deleteProduct } from '../actions/productActions';
 
 const ProductListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -15,6 +15,13 @@ const ProductListScreen = ({ history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = productDelete;
+
   //check if the user login and administrator
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
@@ -22,12 +29,13 @@ const ProductListScreen = ({ history }) => {
     } else {
       history.push('/login');
     }
-  }, [dispatch, history, userInfo]);
+  }, [dispatch, history, userInfo, successDelete]);
 
   //delete the product function
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
       //delete products
+      dispatch(deleteProduct(id));
     }
   };
   //create product
@@ -46,7 +54,8 @@ const ProductListScreen = ({ history }) => {
           </Button>
         </Col>
       </Row>
-
+      {loadingDelete && <Loader />}
+      {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
       {loading ? (
         <Loader />
       ) : error ? (
