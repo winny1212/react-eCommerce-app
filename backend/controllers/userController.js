@@ -120,6 +120,43 @@ const deleteUser = asyncHandler(async (req, res) => {
     throw new Error('User not found');
   }
 });
+
+//@desc    get single user info
+//@route   GET/api/users/:id
+//@access  private(for the user who is administrator)
+const getUserById = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id).select('-password');
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404);
+    throw new Error('User not found !');
+  }
+});
+
+//@desc    update user info
+//@route   PUT/api/users/:id
+//@access  private(for the user who is administrator)
+const updateUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id);
+  //access the updated info
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.isAdmin = req.body.isAdmin || user.isAdmin;
+    const updateUser = await user.save();
+    //return updated user info
+    res.json({
+      _id: updateUser._id,
+      name: updateUser.name,
+      email: updateUser.email,
+      isAdmin: updateUser.isAdmin,
+    });
+  } else {
+    res.status(404);
+    throw new Error('User is not exist');
+  }
+});
 export {
   authUser,
   getUserProfile,
