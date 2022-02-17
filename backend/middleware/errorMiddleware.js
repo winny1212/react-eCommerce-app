@@ -1,6 +1,6 @@
 //for not find a product
 const notFound = (req, res, next) => {
-  const error = new Error(`Oops, can't finf it - ${req.originalUrl}`);
+  const error = new Error(`Oops, can't find it - ${req.originalUrl}`);
   res.status(404);
   next(error);
 };

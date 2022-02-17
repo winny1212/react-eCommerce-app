@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Form,
-  Button,
-  ListGroup,
-  Row,
-  Col,
-  Image,
-  Card,
-} from 'react-bootstrap';
+import { Button, ListGroup, Row, Col, Image, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import { createOrder } from '../actions/orderActions';
@@ -119,7 +111,7 @@ const PlaceorderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>order details</h2>
+                <h2>Order details</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>

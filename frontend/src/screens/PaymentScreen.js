@@ -4,15 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
-const PaymenScreen = ({ history }) => {
+const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
+  //if shipping address in not exist, redirect to the shipping form page
   if (!shippingAddress) {
     history.push('/shipping');
   }
   const [paymentMethod, setPaymentMethod] = useState('Paypal');
   const dispatch = useDispatch();
+  //submit form
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
@@ -50,4 +52,4 @@ const PaymenScreen = ({ history }) => {
   );
 };
 
-export default PaymenScreen;
+export default PaymentScreen;

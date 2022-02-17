@@ -17,8 +17,6 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('the server is running');
 });
-
-//custom routes
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
