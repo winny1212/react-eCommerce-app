@@ -6,7 +6,7 @@ const router = express.Router();
 
 //create disk to store
 const storage = multer.diskStorage({
-  destionaton(req, file, cb) {
+  destination(req, file, cb) {
     cb(null, 'uploads/');
   },
   filename(req, file, cb) {
@@ -28,7 +28,7 @@ const checkFileType = (file, cb) => {
   if (mimetype && extname) {
     return cb(null, true);
   } else {
-    cb('Only image format！');
+    cb(new Error('Only image format！'));
   }
 };
 
