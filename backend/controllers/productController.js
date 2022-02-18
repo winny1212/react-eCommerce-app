@@ -134,6 +134,15 @@ const createProductReview = asyncHandler(async (req, res) => {
     throw new Error('Oops, can not find it!');
   }
 });
+
+//@desc   the first 3 rating products
+//@route   GET/api/products/top
+//@access  public
+const getTopProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({}).sort({ price: 1 }).limit(3);
+
+  res.json(products);
+});
 export {
   getProducts,
   getProductById,
@@ -141,4 +150,5 @@ export {
   createProduct,
   updateProduct,
   createProductReview,
+  getTopProducts,
 };
