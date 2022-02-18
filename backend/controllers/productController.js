@@ -86,6 +86,46 @@ const updateProduct = asyncHandler(async (req, res) => {
     throw new Error('Can not find it!');
   }
 });
+
+//@desc    create comment under product
+//@route   POST/api/products/:id/reviews
+//@access  private
+const createProductReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body;
+  const product = await Product.findById(req.params.id);
+
+  if (product) {
+    //check if the user comment or not, if user already comment the product, alert 'you have comment the product'
+    const alreadeReviewed = product.reviews.find(
+      (review) => review.user.toString() === req.user._id.toString()
+    );
+
+    if (alreadeReviewed) {
+      res.status(400);
+      throw new Error('Sorry, you have commented the product！');
+    }
+
+    //create new comment
+    const review = {
+      name: req.user.name,
+      rating: Number(rating),
+      comment,
+      user: req.user._id,
+    };
+    product.reviews.push(review);
+    //update the comment and rating
+    product.numReviews = product.reviews.length;
+    product.rating =
+      product.reviews.reduce((acc, review) => acc + review.rating, 0) /
+      product.reviews.length;
+
+    await product.save();
+    res.status(201).json({ message: 'Comment successfully' });
+  } else {
+    res.status(404);
+    throw new Error('Oops, can not find it!');
+  }
+});
 export {
   getProducts,
   getProductById,
