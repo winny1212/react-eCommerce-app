@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   }
 `;
 //set the products state
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
   // the method for getting products by useState
   //   const [products, setProducts] = useState([]);
   //   useEffect(() => {
@@ -35,6 +35,7 @@ const HomeScreen = () => {
   //   }, []);
 
   //get the products by reducer
+  const keyword = match.params.keyword;
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
 
@@ -43,8 +44,8 @@ const HomeScreen = () => {
 
   //get the products page
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword));
+  }, [dispatch, keyword]);
 
   return (
     <>
