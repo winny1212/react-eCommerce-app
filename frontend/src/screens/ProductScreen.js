@@ -56,7 +56,7 @@ const ProductScreen = ({ match, history }) => {
   //get product details
   useEffect(() => {
     if (successProductReview) {
-      alert('评论成功！');
+      alert('Comment successfully！');
       setRating(0);
       setComment('');
     }
