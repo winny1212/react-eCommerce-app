@@ -8,11 +8,12 @@ import Product from '../components/Product';
 import { listProducts } from '../actions/productActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
-
+import ProductsCarousel from '../components/ProductsCarousel';
 const Title = styled.h1`
   color: rgb(119, 119, 119);
   font-size: 2em;
   text-align: center;
+  margin-top: 25px;
 `;
 const Wrapper = styled.div`
   transition: all 0.5s ease;
@@ -49,6 +50,7 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      {!keyword && <ProductsCarousel />}
       <Title>The Newest Arrive</Title>
       {/* when get request , the page will show loading before get the products; but if there are error, it will show the error message */}
       {loading ? (

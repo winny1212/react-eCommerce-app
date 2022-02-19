@@ -18,7 +18,7 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar bg='light' variant='light' expand='lg' collapseOnSelect>
+      <Navbar bg='primary' variant='light' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>Home Decor</Navbar.Brand>
@@ -59,9 +59,6 @@ const Header = () => {
                   </LinkContainer>
                   <LinkContainer to='/admin/productlist'>
                     <NavDropdown.Item>Product list</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/admin/orderlist'>
-                    <NavDropdown.Item>Order list</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}

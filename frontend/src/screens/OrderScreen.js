@@ -41,7 +41,7 @@ const OrderScreen = ({ match }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order ID：{order._id}</h1>
+      <h2>Order ID：{order._id}</h2>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
@@ -49,11 +49,11 @@ const OrderScreen = ({ match }) => {
               <h2>Shipping details:</h2>
 
               <p>
-                <strong>Name:</strong>
+                <strong>Name: </strong>
                 {order.user.name}
               </p>
               <p>
-                <strong>Email address:</strong>
+                <strong>Email address: </strong>
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
@@ -69,7 +69,7 @@ const OrderScreen = ({ match }) => {
                   Shipping at：{order.DeliveredAt}
                 </Message>
               ) : (
-                <Message variant='danger'>Pending</Message>
+                <Message variant='warning'>Shipping Pending</Message>
               )}
             </ListGroup.Item>
 
@@ -82,7 +82,7 @@ const OrderScreen = ({ match }) => {
               {order.isPaid ? (
                 <Message variant='success'>Paid at：{order.PaidAt}</Message>
               ) : (
-                <Message variant='danger'>Pending</Message>
+                <Message variant='warning'>Payment Pending</Message>
               )}
             </ListGroup.Item>
 
@@ -104,7 +104,10 @@ const OrderScreen = ({ match }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={`/products/${item.product}`}>
+                          <Link
+                            to={`/products/${item.product}`}
+                            style={{ textDecoration: 'none' }}
+                          >
                             {item.name}
                           </Link>
                         </Col>

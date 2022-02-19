@@ -48,10 +48,10 @@ const UserEditScreen = ({ match, history }) => {
     <Container>
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
-          <Link to='/admin/userlist' className='btn btn-dark my-3'>
+          <Link to='/admin/userlist' className='btn btn-secondary my-3'>
             back
           </Link>
-          <h1>Update profile</h1>
+          <h1>Edit profile</h1>
           {loadingUpdate && <Loader />}
           {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
           {loading ? (
@@ -63,6 +63,7 @@ const UserEditScreen = ({ match, history }) => {
               <Form.Group controlId='name'>
                 <Form.Label>Username：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='name'
                   placeholder='Enter username'
                   value={name}
@@ -72,6 +73,7 @@ const UserEditScreen = ({ match, history }) => {
               <Form.Group controlId='email'>
                 <Form.Label>Email address：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='email'
                   placeholder='Enter email'
                   value={email}
@@ -80,6 +82,7 @@ const UserEditScreen = ({ match, history }) => {
               </Form.Group>
               <Form.Group controlId='isadmin'>
                 <Form.Check
+                  className='mb-2'
                   type='checkbox'
                   label='Is Admin'
                   checked={isAdmin}

@@ -113,6 +113,7 @@ const ProductScreen = ({ match, history }) => {
                   <Rating
                     value={product.rating}
                     text={`${product.numReviews} comments`}
+                    color='#f8e825'
                   />
                 </ListGroup.Item>
                 <ListGroup.Item>Price:${product.price}</ListGroup.Item>
@@ -175,16 +176,16 @@ const ProductScreen = ({ match, history }) => {
           {/* Comment/review */}
           <Row>
             <Col md={6}>
-              <h2>comment</h2>
+              <h2>Comment</h2>
               {product.reviews && product.reviews.length === 0 && (
-                <Message>Haven't comment here!</Message>
+                <Message variant='warning'>No comment here !</Message>
               )}
               <ListGroup variant='flush'>
                 {product.reviews &&
                   product.reviews.map((review) => (
                     <ListGroup.Item key={review._id}>
                       <strong>{review.name}</strong>
-                      <Rating value={review.rating} />
+                      <Rating value={review.rating} color='#f8e825' />
                       <p>{review.createdAt.substring(0, 10)}</p>
                       <p>{review.comment}</p>
                     </ListGroup.Item>
@@ -199,10 +200,11 @@ const ProductScreen = ({ match, history }) => {
                     <Form onSubmit={submitHandler}>
                       <Form.Group>
                         <Form.Label>Rating：</Form.Label>
-                        <Form.Control
+                        <Form.Select
                           as='select'
                           value={rating}
                           onChange={(e) => setRating(e.target.value)}
+                          className='mb-3'
                         >
                           <option value=''>Select...</option>
                           <option value='1'>1 - Very disatisfied</option>
@@ -210,10 +212,11 @@ const ProductScreen = ({ match, history }) => {
                           <option value='3'>3 - OK</option>
                           <option value='4'>4 - Satisfied</option>
                           <option value='5'>5 - Very Satisfied</option>
-                        </Form.Control>
+                        </Form.Select>
                       </Form.Group>
                       <Form.Group controlId='comment'>
                         <Form.Control
+                          className='mb-3'
                           as='textarea'
                           row='3'
                           value={comment}

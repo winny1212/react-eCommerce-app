@@ -97,10 +97,10 @@ const ProductEditScreen = ({ match, history }) => {
     <Container>
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
-          <Link to='/admin/productlist' className='btn btn-dark my-3'>
-            Back
+          <Link to='/admin/productlist' className='btn btn-secondary my-3'>
+            back
           </Link>
-          <h1>Update product</h1>
+          <h1>New product</h1>
           {loadingUpdate && <Loader />}
           {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
           {loading ? (
@@ -110,8 +110,9 @@ const ProductEditScreen = ({ match, history }) => {
           ) : (
             <Form onSubmit={submitHandler}>
               <Form.Group controlId='name'>
-                <Form.Label>Name：</Form.Label>
+                <Form.Label>Product Name：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='name'
                   placeholder='Enter name'
                   value={name}
@@ -119,8 +120,9 @@ const ProductEditScreen = ({ match, history }) => {
                 ></Form.Control>
               </Form.Group>
               <Form.Group controlId='price'>
-                <Form.Label>Price：</Form.Label>
+                <Form.Label>Product Price：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='number'
                   placeholder='enter price'
                   value={price}
@@ -128,14 +130,16 @@ const ProductEditScreen = ({ match, history }) => {
                 ></Form.Control>
               </Form.Group>
               <Form.Group controlId='image'>
-                <Form.Label>Image：</Form.Label>
+                <Form.Label>Product Image：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='text'
                   placeholder='File path'
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                 ></Form.Control>
                 <Form.Control
+                  className='mb-2'
                   type='file'
                   id='image-file'
                   label='Choose file'
@@ -148,6 +152,7 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Group controlId='countInStock'>
                 <Form.Label>In stock：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='number'
                   placeholder='Enter number'
                   value={countInStock}
@@ -155,17 +160,19 @@ const ProductEditScreen = ({ match, history }) => {
                 ></Form.Control>
               </Form.Group>
               <Form.Group controlId='category'>
-                <Form.Label>Category：</Form.Label>
+                <Form.Label>Product Category：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='text'
-                  placeholder='Enter categary'
+                  placeholder='Enter category'
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 ></Form.Control>
               </Form.Group>
               <Form.Group controlId='description'>
-                <Form.Label>Description：</Form.Label>
+                <Form.Label>Product Description：</Form.Label>
                 <Form.Control
+                  className='mb-2'
                   type='text'
                   placeholder='Enter description'
                   value={description}

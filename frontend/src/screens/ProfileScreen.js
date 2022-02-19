@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -46,64 +46,58 @@ const ProfileScreen = ({ location, history }) => {
     dispatch(updateUserDetails({ id: user._id, name, email, password }));
   };
   return (
-    <Row>
-      <Col md={4}>
-        <h2>Personal details</h2>
-        {success && <Message variant='success'>Update sucessfully！</Message>}
-        {message && <Message variant='danger'>{message}</Message>}
-        {error && <Message variant='danger'>{error}</Message>}
-        {loading && <Loader />}
-        <Form onSubmit={submitHandler}>
-          <Form.Group className='mb-3' controlId='name'>
-            <Form.Label>Username：</Form.Label>
-            <Form.Control
-              type='name'
-              placeholder='Username'
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='email'>
-            <Form.Label>Email：</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='password'>
-            <Form.Label>Password：</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group className='mb-3' controlId='confirmPassword'>
-            <Form.Label>Password confirmation：</Form.Label>
-            <Form.Control
-              type='password'
-              placeholder='Password confirmation'
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
-          <Button variant='primary' type='submit'>
-            Edit
-          </Button>
-        </Form>
-      </Col>
-      <Col md={4}>
-        <h2>My order:</h2>
-
-        <h6 style={{ color: '#ec5285' }}>
-          This part shows user's order details including delivery state, it will
-          be coming soon!
-        </h6>
-      </Col>
-    </Row>
+    <Container>
+      <Row className='justify-content-md-center'>
+        <Col xs={12} md={6}>
+          <h2>Personal details (editable)</h2>
+          {success && <Message variant='success'>Update sucessfully！</Message>}
+          {message && <Message variant='danger'>{message}</Message>}
+          {error && <Message variant='danger'>{error}</Message>}
+          {loading && <Loader />}
+          <Form onSubmit={submitHandler}>
+            <Form.Group className='mb-2' controlId='name'>
+              <Form.Label>Username：</Form.Label>
+              <Form.Control
+                type='name'
+                placeholder='Username'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className='mb-2' controlId='email'>
+              <Form.Label>Email：</Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className='mb-2' controlId='password'>
+              <Form.Label>Password：</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className='mb-2' controlId='confirmPassword'>
+              <Form.Label>Password confirmation：</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Password confirmation'
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Button variant='primary' type='submit'>
+              Edit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
