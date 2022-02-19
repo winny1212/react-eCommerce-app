@@ -37,6 +37,9 @@ const LoginScreen = ({ location, history }) => {
           <h1 style={{ color: 'rgb(119, 119, 119)', fontSize: '2em' }}>
             Login
           </h1>
+          <p style={{ color: 'rgb(119, 119, 119)', fontSize: '0.6em' }}>
+            Administrator Email : admin@example.com (Password : 123456)
+          </p>
           {error && <Message variant='danger'>{error}</Message>}
           {loading && <Loader />}
           <Form onSubmit={submitHandler}>
