@@ -229,7 +229,8 @@ const ProductScreen = ({ match, history }) => {
                     </Form>
                   ) : (
                     <Message>
-                      Please comment after <Link to='/login'> Login</Link>
+                      Please comment after
+                      <Link to='/login'> login</Link>
                     </Message>
                   )}
                 </ListGroup.Item>
