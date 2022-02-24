@@ -36,27 +36,37 @@ Home Decor is a two-sided application using react and mern stack. If the user ha
     ![productDetails](./docs/productDetails.png)
 - Login Page
   ![login](./docs/login.png)
-- Sign up page
+- Sign up page (Test administrator user : admin@example.com ; password: 123456)
   ![register](./docs/register.png)
 - User profile edit page
   - _Update user profile_:After login, user can update their username, email, password.
-    ![productDetails](./docs/productDetails.png)
+  - _Update username on navbar_:After updated, username will be change on the navbar automatically.
     ![profileEdit](./docs/profileEdit.png)
 - Cart page
-  - _Showing cart information_
+  - _Showing cart information_: Showing shopping cart information and allow user going to checkout step.
     ![cart](./docs/cart.png)
 - shipping page
-  ![cart](./docs/shipping.png)
+  - _Add shipping information_
+    ![shipping](./docs/shipping.png)
 - OrderComfirm page
-  ![cart](./docs/orderComfirm.png)
-- Create new product page
-  ![cart](./docs/createNewProduct.png)
+  ![orderComfirm](./docs/orderComfirm.png)
 - Order details page
-  ![cart](./docs/orderDetails.png)
+  ![orderDetails](./docs/orderDetails.png)
 - Product list page
-- _Update product list_:If user has admin authorization, he/she can edit product details,delete the product or create a new product.
-  ![productDetails](./docs/productDetails.png)
-  ![cart](./docs/productList.png)
+
+  - _Update product list_:If user has admin authorization, he/she can edit product details,delete the product or create a new product.
+
+  ![productList](./docs/productList.png)
+
+- Create new product page
+  - _Create new product list_:If user has admin authorization, he/she can edit product details,delete the product or create a new product.
+    ![createNewProduct](./docs/createNewProduct.png)
+- Edit existing product page
+  - _Edit existing product list_:If user has admin authorization, he/she can edit product details.
+    ![productEdit](./docs/productEdit.png)
 - User list page
   If user has admin authorization, he/she can edit user information including changing user to an administrator or not or delete a user information.
-  ![cart](./docs/userList.png)
+  ![userList](./docs/userList.png)
+- User edit page
+  If user has admin authorization, he/she can edit user information including changing user to an administrator or not.
+  ![userEdit](./docs/userEdit.png)
