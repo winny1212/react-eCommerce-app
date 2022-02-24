@@ -46,7 +46,7 @@ Home Decor is a two-sided application using react and mern stack. If the user ha
   - _Showing cart information_: Showing shopping cart information and allow user going to checkout step.
     ![cart](./docs/cart.png)
 - shipping page
-  - _Add shipping information_
+  - _Add shipping information_: User need to fill in their shipping information here. And the stepper will be shown above the form.
     ![shipping](./docs/shipping.png)
 - OrderComfirm page
   ![orderComfirm](./docs/orderComfirm.png)
@@ -59,14 +59,16 @@ Home Decor is a two-sided application using react and mern stack. If the user ha
   ![productList](./docs/productList.png)
 
 - Create new product page
+
   - _Create new product list_:If user has admin authorization, he/she can edit product details,delete the product or create a new product.
     ![createNewProduct](./docs/createNewProduct.png)
+
 - Edit existing product page
   - _Edit existing product list_:If user has admin authorization, he/she can edit product details.
     ![productEdit](./docs/productEdit.png)
-- User list page
+- User list page  
   If user has admin authorization, he/she can edit user information including changing user to an administrator or not or delete a user information.
   ![userList](./docs/userList.png)
-- User edit page
+- User edit page  
   If user has admin authorization, he/she can edit user information including changing user to an administrator or not.
   ![userEdit](./docs/userEdit.png)
